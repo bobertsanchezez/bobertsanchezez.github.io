@@ -1,0 +1,165 @@
+/* General styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Bahnschrift, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+/* Define the animation for the flashing cursor */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Apply the animation to the h1 element's pseudo-element */
+h1:after {
+  content: "|";
+  color: white;
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+/* Define the animation */
+@keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 14.5%;
+  }
+}
+
+/* Apply the animation to the h1 element */
+h1 {
+  font-size: 56px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  /* border-right: 2px solid; */
+  max-width: 14.5%; /* Set a maximum width to prevent it from pushing other elements */
+  width: 100%;
+  animation: type 1s steps(25) forwards;
+}
+
+/* Set the width of each letter */
+h1:before {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  height: 100%;
+  width: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  margin: 50px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.project,
+.game {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.project img,
+.game img {
+  max-width: 100%;
+}
+
+.project h3,
+.game h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project p,
+.game p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Media queries */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    margin-top: 10px;
+  }
+
+  nav li {
+    margin: 0 5px;
+  }
+
+  section {
+    margin: 30px auto;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .project,
+  .game {
+    padding: 5px;
+  }
+
+  .project h3,
+  .game h3 {
+    font-size: 20px;
+  }
+
+  .project p,
+  .game p {
+    font-size: 14px;
+  }
+}
